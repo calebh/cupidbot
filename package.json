@@ -1,0 +1,25 @@
+{
+  "name": "cupidbot",
+  "version": "1.0.0",
+  "description": "A matchmaking bot for Discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "matchmaking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "encoding-down": "^7.0.0",
+    "level-js": "^6.0.0",
+    "leveldown": "^6.0.2",
+    "levelup": "^5.0.1"
+  }
+}
