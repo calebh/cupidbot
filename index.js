@@ -31,7 +31,7 @@ client.on('messageCreate', async (message) => {
       if (message.content === "undo") {
         if (author_likes.length > 0) {
           author_likes.pop();
-          db.set(author_key, author_likes);
+          db.put(author_key, author_likes);
           message.author.send("Your last like has been removed.");
         }
       } else if (message.content === "clear") {
