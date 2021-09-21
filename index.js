@@ -82,7 +82,7 @@ client.on('messageReactionAdd', async (reaction, user) => {
           // Remove them from the likes list, update the database and message the user
           // notifying them of the change
           db.put(liker_key, prev_likes.filter((value, index, arr) => value !== receiver_key));
-          liker.send("You have unliked " + receiver.toString() + " from your set of likes. To clear all your likes and remove yourself from the CupidBot system, send me a direct message with 'clear' (no quotes)");
+          liker.send("You have unliked " + receiver.toString() + " (" + receiver.tag + ") from your set of likes. To clear all your likes and remove yourself from the CupidBot system, send me a direct message with 'clear' (no quotes)");
           return;
         }
         else
@@ -114,10 +114,10 @@ client.on('messageReactionAdd', async (reaction, user) => {
           });
 
           if (isMatch) {
-            liker.send("You just liked " + receiver.toString() + " and the feeling is mutual! Congratulations on the match! They have also been notified in a direct message. Due to the current limitations of the Discord API, this bot cannot directly open a message between you two. Please open a direct message on your own :-)");
-            receiver.send(liker.toString() + " just liked you, and based on your past likes the feeling is mutual! Congratulations on the match! They have also been notified in a direct message. Due to the current limitations of the Discord API, this bot cannot directly open a message between you two. Please open a direct message on your own :-)");
+            liker.send("You just liked " + receiver.toString() + " (" + receiver.tag +") and the feeling is mutual! Congratulations on the match! They have also been notified in a direct message. Due to the current limitations of the Discord API, this bot cannot directly open a message between you two. Please open a direct message on your own :-)");
+            receiver.send(liker.toString() + " (" + liker.tag + ") just liked you, and based on your past likes the feeling is mutual! Congratulations on the match! They have also been notified in a direct message. Due to the current limitations of the Discord API, this bot cannot directly open a message between you two. Please open a direct message on your own :-)");
           } else {
-            liker.send("This is a confirmation that your like of " + receiver.toString() + " has been received. If and when they return the like, you will receive another notification via direct message from this bot.");
+            liker.send("This is a confirmation that your like of " + receiver.toString() + " (" + receiver.tag + ")" + " has been received. If and when they return the like, you will receive another notification via direct message from this bot.");
           }
 
           liker.send("To remove the like you just sent, send me a direct message with the text 'undo' (no quotes) or react to that person's message again. To clear all your likes and remove yourself from the CupidBot system, send me a direct message with 'clear' (no quotes)");
